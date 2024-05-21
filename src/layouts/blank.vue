@@ -2,13 +2,14 @@
 import { loadLanguageAsync } from '~/modules/i18n'
 
 const { locale } = useI18n()
-const { y } = useWindowScroll()
+const { y, x } = useWindowScroll()
 </script>
 
 <template>
   <div>
     <!-- PC -->
     <header
+      v-if="x > 768"
       :class="`pc-header ${y > 50 ? `bg-white/80 dark:bg-black/80` : ''}`"
       fixed left-0 top-0 z-99 hidden w-full items-center justify-between pb2 pt2.5 backdrop-blur-sm smooth md:flex p-safe
     >

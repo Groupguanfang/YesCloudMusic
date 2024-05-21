@@ -6,6 +6,7 @@ import { loadLanguageAsync } from '~/modules/i18n'
 const route = useRoute()
 const { t, locale } = useI18n()
 const { y } = useWindowScroll()
+const { width } = useWindowSize()
 const showPlayer = inject<Ref<boolean>>('showPlayer')
 // TODO: 搜索做好了之后再取消注释
 // const showSearch = inject<Ref<boolean>>('showSearch')
@@ -31,6 +32,7 @@ const currentLocation = computed(() => nav.value.find(item => item.to === route.
     <!-- PC -->
 
     <header
+      v-if="width >= 768"
       :class="`pc-header ${y > 50 ? `bg-white/80 dark:bg-black/80` : ''}`"
       fixed left-0 top-0 z-99 hidden w-full items-center justify-between pb2 pt2.5 backdrop-blur-sm smooth md:flex p-safe
     >
@@ -66,7 +68,12 @@ const currentLocation = computed(() => nav.value.find(item => item.to === route.
       </div>
     </header>
     <!-- Mobile -->
-    <header class="mobile-header bg-white/70 dark:bg-black/70" fixed bottom-0 left-0 z-99 w-full pt1 backdrop-blur-3xl border-t="solid 1px white/5">
+    <header
+      v-if="width <= 768"
+      class="mobile-header bg-white/70 dark:bg-black/70" fixed bottom-0 left-0 z-99 w-full pt1
+      backdrop-blur-3xl
+      border-t="solid 1px white/5"
+    >
       <nav class="mobile-nav" w-full flex items-center justify-around pb4 md:hidden>
         <div v-for="(item, index) in [nav[0], nav[1]]" :key="index">
           <button
