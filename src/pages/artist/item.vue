@@ -6,7 +6,7 @@ const { data: artistsResponse } = useArtists(true, id)
 <template>
   <div class="p-safe-mini">
     <div w-full flex flex-col items-center gap6 sm:flex-row>
-      <img h-full class="max-w-60% sm:max-w-30" rounded-full :src="artistsResponse.artist.img1v1Url" alt="avatar">
+      <img class="max-w-60% sm:max-w-30" rounded-full :src="artistsResponse.artist.img1v1Url" alt="avatar">
       <!-- eslint-disable -->
       <div flex flex-col sm:flex-row sm:gap5 md:gap8 justify-center items-center>
         <div flex flex-col gap5>
