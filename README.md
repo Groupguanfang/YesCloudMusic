@@ -11,3 +11,21 @@ Opinionated refactor new [YesPlayMusic](https://github.com/qier222/YesPlayMusic)
 > Live preview: [https://yes.naily.cc](https://yes.naily.cc)
 
 Personal project, there is still a lot of work to do, welcome to make suggestions and contribute code.
+
+## Technologies
+
+- Vitesse
+
+## Install
+
+Recommend use `pnpm` to install dependencies.
+
+```sh
+pnpm install
+```
+
+Run this project:
+
+```sh
+pnpm dev
+```
