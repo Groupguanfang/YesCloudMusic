@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { darkTheme, zhCN } from 'naive-ui'
 import type { z } from 'zod'
-import { NaiveDark, NaiveLight } from './configs/naive'
 import OgImage from './assets/images/og-image.png'
+import { NaiveDark, NaiveLight } from './configs/naive'
 
 // https://github.com/vueuse/head
 // you can use this to manipulate the document head in any components,
